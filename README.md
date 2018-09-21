@@ -5,8 +5,8 @@ Para executar a aplicação é necessario os seguintes ajustes:
 - Na mesma classe deve ser ajustada a tag <log4net> onde dentro da mesma existe a tag <file value>, deve ser informado um caminho para que a aplicação possa gerar o arquivo de log, não se esquecendo de utilizar \\ no caminho para que o sistema possa entender.
 - Apos escolher sua base de dados, deve ser gerada as tabelas conforme script a seguir:
   CREATE TABLE [dbo].[Cartoes]([NrCartao] [decimal](19, 0) NOT NULL, [NrLote] [int] NULL, CONSTRAINT [PK_Cartoes] PRIMARY KEY CLUSTERED 
-([NrCartao])
-  CREATE TABLE [dbo].[Usuarios]([IdUsuario] [int] IDENTITY(1,1) NOT NULL, [Nome] [varchar](50) NULL, [Senha] [varchar](50) NULL,  [Email] [varchar](100) NULL, CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED ([IdUsuario])
+([NrCartao]))
+  CREATE TABLE [dbo].[Usuarios]([IdUsuario] [int] IDENTITY(1,1) NOT NULL, [Nome] varchar(50) NULL, [Senha] varchar(50) NULL, [Email] varchar(100) NULL, CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED ([IdUsuario]))
 - Apos criação das tabelas deve ser incluido o usuario admin para que possa ser feito o primeiro login, segue script:
   INSERT INTO dbo.Usuarios (Nome, Senha, Email) VALUES ('admin', 'password', NULL)
 
